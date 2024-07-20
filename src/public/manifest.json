@@ -1,0 +1,25 @@
+{
+    "name": "SiteSpeed",
+    "manifest_version": 2,
+    "version": "1.0.1",
+    "description": "Take control of your browsing! SiteSpeed helps you identify slow websites and provides actionable tips to improve your online experience.",
+    "icons": {
+      "16": "logo192.png",
+      "48": "logo192.png",
+      "128": "logo192.png"
+    },
+    "background": {
+      "service_worker": "static/js/background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["static/js/content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "index.html"
+    },
+    "permissions": ["storage", "tabs"]
+  }
+  
