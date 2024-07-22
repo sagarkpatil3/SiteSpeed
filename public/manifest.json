@@ -2,7 +2,7 @@
   "name": "SiteSpeed",
   "manifest_version": 3,
   "version": "1.0.1",
-  "description": "Take control of your browsing! SiteSpeed helps you identify slow websites and provides actionable tips to improve your online experience.",
+  "description": "Take control of your browsing! SiteSpeed helps you identify slow websites and provides tips to improve your online experience.",
   "icons": {
     "16": "efficiency.png",
     "48": "efficiency.png",

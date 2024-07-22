@@ -1,4 +1,8 @@
 const { override } = require("customize-cra");
+const webpack = require("webpack");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const overrideEntry = (config) => {
   config.entry = {
@@ -20,6 +24,16 @@ const overrideOutput = (config) => {
   return config;
 };
 
+const injectEnvVariables = () => (config) => {
+  config.plugins = (config.plugins || []).concat([
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(process.env),
+    }),
+  ]);
+  return config;
+};
+
 module.exports = {
-  webpack: (config) => override(overrideEntry, overrideOutput)(config),
+  webpack: (config) =>
+    override(overrideEntry, overrideOutput, injectEnvVariables())(config),
 };
